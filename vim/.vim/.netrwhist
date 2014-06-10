@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/shaokc/work/sim_1'
+let g:netrw_dirhist_2='/home/shaokc/ダウンロード'
+let g:netrw_dirhist_3='/home/shaokc/git'
+let g:netrw_dirhist_4='/home/shaokc/git/xdiff'
+let g:netrw_dirhist_5='/home/shaokc/Downloads'
+let g:netrw_dirhist_6='/home/shaokc/Downloads/syntax'

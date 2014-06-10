@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="../style.css">
+<title>文章标题-VimWiki插件</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h1>文章目录</h1>
+<div class="toc">
+<ul>
+<li><a href="#toc_1">VimWiki</a>
+<ul>
+<li><a href="#toc_1.1">Function Description</a>
+<li><a href="#toc_1.2">特殊占位符</a>
+<li><a href="#toc_1.3">Paragraph Related</a>
+</ul>
+<li><a href="#toc_2">Header1</a>
+<ul>
+<li><a href="#toc_2.1">Header2</a>
+<ul>
+<li><a href="#toc_2.1.1">Header3</a>
+<ul>
+<li><a href="#toc_2.1.1.1">Header4</a>
+<ul>
+<li><a href="#toc_2.1.1.1.1">Header5</a>
+<ul>
+<li><a href="#toc_2.1.1.1.1.1">Header6</a>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href="#toc_2.2">Code Hightlight</a>
+<ul>
+<li><a href="#toc_2.2.0.0.0.1">2014-06-08</a>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href="#toc_3">Vim</a>
+<ul>
+<li><a href="#toc_3.1">Command</a>
+</ul>
+<li><a href="#toc_4">Header1</a>
+<ul>
+<li><a href="#toc_4.1">Header2</a>
+<ul>
+<li><a href="#toc_4.1.1">Header3</a>
+</ul>
+</ul>
+</ul>
+</div>
+
+
+<h1 id="toc_1">VimWiki</h1>
+<h2 id="toc_1.1">Function Description</h2>
+<p>
+维基语法的作用有三点。
+</p>
+<ul>
+<li>
+使条目更规范。通过一定转换，wiki 能输出为拥有约定俗成格式的HTML；
+
+<li>
+节约编辑时间。 显然，你不用写出完整的HTML标签，也不用在可视化编辑器中点来点去；
+
+<li>
+充分的可读性。使用维基语法书写的文档，即使未被转为HTML，内容的语义也是一目了然，甚至表格也能清晰地阅读。
+
+</ul>
+ 
+<h2 id="toc_1.2">特殊占位符</h2>
+<h1>自动生成的目录</h1>
+<div class="toc">
+<ul>
+<li><a href="#toc_1">VimWiki</a>
+<ul>
+<li><a href="#toc_1.1">Function Description</a>
+<li><a href="#toc_1.2">特殊占位符</a>
+<li><a href="#toc_1.3">Paragraph Related</a>
+</ul>
+<li><a href="#toc_2">Header1</a>
+<ul>
+<li><a href="#toc_2.1">Header2</a>
+<ul>
+<li><a href="#toc_2.1.1">Header3</a>
+<ul>
+<li><a href="#toc_2.1.1.1">Header4</a>
+<ul>
+<li><a href="#toc_2.1.1.1.1">Header5</a>
+<ul>
+<li><a href="#toc_2.1.1.1.1.1">Header6</a>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href="#toc_2.2">Code Hightlight</a>
+<ul>
+<li><a href="#toc_2.2.0.0.0.1">2014-06-08</a>
+</ul>
+</ul>
+</ul>
+</ul>
+</ul>
+<li><a href="#toc_3">Vim</a>
+<ul>
+<li><a href="#toc_3.1">Command</a>
+</ul>
+<li><a href="#toc_4">Header1</a>
+<ul>
+<li><a href="#toc_4.1">Header2</a>
+<ul>
+<li><a href="#toc_4.1.1">Header3</a>
+</ul>
+</ul>
+</ul>
+</div>
+ 
+<h2 id="toc_1.3">Paragraph Related</h2>
+<ol>
+<li>
+Title Class
+
+</ol>
+<h1 id="toc_2">Header1</h1>
+<h2 id="toc_2.1">Header2</h2>
+<h3 id="toc_2.1.1">Header3</h3>
+<h4 id="toc_2.1.1.1">Header4</h4>
+<h5 id="toc_2.1.1.1.1">Header5</h5>
+<h6 id="toc_2.1.1.1.1.1">Header6</h6>
+
+<ol>
+<li>
+Vimwiki中的换行
+
+</ol>
+<p>
+方法1:<br>
+在行末尾加上<br>
+</p>
+<blockquote>
+方法1：<br>
+</blockquote>
+<p>
+方法2:
+</p>
+
+<p>
+空一行
+</p>
+
+<p>
+例如
+</p>
+<blockquote>
+方法2:
+</blockquote>
+<blockquote>
+空一行 
+</blockquote>
+
+<p>
+<strong>But the effects of the two method has a little differce</strong>
+</p>
+
+
+<h2 id="toc_2.2">Code Hightlight</h2>
+
+<pre class="brush: python">
+for i in range(1, 5):
+    print(i)
+</pre>
+
+<pre class="brush: c++">
+#include "helloworld.h"
+int helloworld()
+{
+   printf("hello world");
+}
+</pre>
+
+<p>
+or in:
+</p>
+ 
+<pre c++>
+#include "helloworld.h"
+int helloworld()
+{
+   printf("hello world");
+}
+</pre>
+
+<pre python>
+for i in range(1, 5):
+    print(i)
+</pre>
+
+
+
+<p>
+<a href="Wiki Item.html">Wiki Item</a>
+[]
+www.google.com.hk
+</p>
+
+<p>
+[www.baidu.com BAIDU]
+</p>
+
+
+<h6 id="toc_2.2.0.0.0.1">2014-06-08</h6>
+
+
+
+<h1 id="toc_3">Vim</h1>
+<h2 id="toc_3.1">Command</h2>
+<ul>
+<li>
+vimgrep 命令 
+
+</ul>
+<p>
+试用 :vimgrep word * 可以在当前目录的任意文件下查找“word”，并生成 quickfix 列表。试用 :cl 可以查看所有匹配结果。使用 :cn 到下一个， :cp 到上一个。<br>
+使用 :vimgrep /pattern/gj *.php 可以在当前目录的php文件中按搜索模式 pattern 查找。标志位 g 代表每次匹配都加入匹配结果列表，否则每行只匹配一次。标志位 j 表示只更新 quickfix 列表，否则 vim 会跳到第一个匹配上。<br>
+</p>
+
+
+
+
+
+<p>
+ ======================The content under this line is a illustration
+</p>
+<h1 id="toc_4">Header1</h1>
+<h2 id="toc_4.1">Header2</h2>
+<h3 id="toc_4.1.1">Header3</h3>
+
+
+<p>
+<strong>bold</strong> — bold
+<em>italic</em> — italic
+WikiWord — link to WikiWord （这是驼峰词的用法）
+<a href="complex wiki link.html">complex wiki link</a> — link to complex wiki link
+Indent lists with at least 1 space:
+</p>
+
+<p>
+<strong>numbered list item</strong>
+</p>
+<ol>
+<li>
+who am i
+
+<li>
+who are you
+
+<li>
+i am shaokechang
+
+</ol>
+
+<p>
+<strong>sbullet item</strong>
+</p>
+<ul>
+<li>
+what is this
+
+<li>
+What is that
+
+<li>
+yang fu ping
+
+</ul>
+<p>
+<del>Delate line</del>
+</p>
+
+</body>
+</html>

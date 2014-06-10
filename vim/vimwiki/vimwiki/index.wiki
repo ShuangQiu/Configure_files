@@ -1,0 +1,116 @@
+%title 文章标题-VimWiki插件
+%toc 文章目录
+
+
+=VimWiki=
+==Function Description==
+维基语法的作用有三点。
+* 使条目更规范。通过一定转换，wiki 能输出为拥有约定俗成格式的HTML；
+* 节约编辑时间。 显然，你不用写出完整的HTML标签，也不用在可视化编辑器中点来点去；
+* 充分的可读性。使用维基语法书写的文档，即使未被转为HTML，内容的语义也是一目了然，甚至表格也能清晰地阅读。
+ 
+==特殊占位符==
+ %toc 自动生成的目录
+ %title 指定HTML文档的title，建议放到文档最末尾。如果不指定，title 就是文件名
+ 
+==Paragraph Related==
+# Title Class
+= Header1 =
+== Header2 ==
+=== Header3 ===
+==== Header4 ====
+===== Header5 =====
+====== Header6 ======
+
+# Vimwiki中的换行
+方法1:<br>
+在行末尾加上<br>
+    方法1：<br>
+方法2:
+
+空一行
+
+例如
+
+    方法2:
+
+    空一行 
+
+*But the effects of the two method has a little differce*
+
+
+==Code Hightlight==
+
+{{{class="brush: python"
+for i in range(1, 5):
+    print(i)
+}}}
+
+{{{class="brush: c++"
+#include "helloworld.h"
+int helloworld()
+{
+   printf("hello world");
+}
+}}}
+
+or in:
+ 
+{{{c++
+#include "helloworld.h"
+int helloworld()
+{
+   printf("hello world");
+}
+}}}
+
+{{{python
+for i in range(1, 5):
+    print(i)
+}}}
+
+
+
+[[Wiki Item]]
+[]
+www.google.com.hk
+
+[www.baidu.com BAIDU]
+
+
+======2014-06-08 ======
+
+
+
+=Vim=
+==Command==
+* vimgrep 命令 
+试用 :vimgrep word * 可以在当前目录的任意文件下查找“word”，并生成 quickfix 列表。试用 :cl 可以查看所有匹配结果。使用 :cn 到下一个， :cp 到上一个。<br>
+使用 :vimgrep /pattern/gj *.php 可以在当前目录的php文件中按搜索模式 pattern 查找。标志位 g 代表每次匹配都加入匹配结果列表，否则每行只匹配一次。标志位 j 表示只更新 quickfix 列表，否则 vim 会跳到第一个匹配上。<br>
+
+
+
+
+
+ ======================The content under this line is a illustration
+= Header1 =
+== Header2 ==
+=== Header3 ===
+
+
+*bold* — bold
+_italic_ — italic
+WikiWord — link to WikiWord （这是驼峰词的用法）
+[[complex wiki link]] — link to complex wiki link
+Indent lists with at least 1 space:
+
+*numbered list item*
+# who am i
+# who are you
+# i am shaokechang
+
+*sbullet item*
+* what is this
+* What is that
+* yang fu ping
+~~Delate line~~
