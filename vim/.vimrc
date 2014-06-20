@@ -1,3 +1,11 @@
+""set colorscheme
+set background=dark
+"colorscheme solarized
+"colorscheme dark_ligt_blue
+"colorscheme dark_purple
+"colorscheme anotherdark
+colorscheme ChocolateLiquor
+
 set nu
 
 "set tab to 4 blanks

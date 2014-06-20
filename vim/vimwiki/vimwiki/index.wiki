@@ -88,7 +88,8 @@ www.google.com.hk
 试用 :vimgrep word * 可以在当前目录的任意文件下查找“word”，并生成 quickfix 列表。试用 :cl 可以查看所有匹配结果。使用 :cn 到下一个， :cp 到上一个。<br>
 使用 :vimgrep /pattern/gj *.php 可以在当前目录的php文件中按搜索模式 pattern 查找。标志位 g 代表每次匹配都加入匹配结果列表，否则每行只匹配一次。标志位 j 表示只更新 quickfix 列表，否则 vim 会跳到第一个匹配上。<br>
 
-
+===Color Configure===
+Ref Link	http://bytefluent.com/devify/
 
 
 
