@@ -1,0 +1,3 @@
+gcc -fPIC -m32 -shared -o libdpi.so \
+    factorial.c \
+    -l /usr/cadence/IUS9.2/tools.lnx86/include/
