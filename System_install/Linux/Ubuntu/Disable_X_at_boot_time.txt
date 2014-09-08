@@ -1,0 +1,13 @@
+Installing the GUI will probably cause it to start automatically, but it's very easy to boot to text mode in Ubuntu. Just open /etc/default/grub as root and add text to the
+
+GRUB_CMDLINE_LINUX_DEFAULT=
+
+line. Then run:
+
+sudo update-grub
+
+Your system will then always boot to text mode.
+If you want to boot to the GUI, just press e in the boot menu and remove text from the kernel line.
+If you want to start the GUI after boot, just run:
+
+sudo /etc/init.d/lightdm start
