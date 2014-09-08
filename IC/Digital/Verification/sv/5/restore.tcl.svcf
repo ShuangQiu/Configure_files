@@ -1,0 +1,93 @@
+# SimVision Command Script (Mon Sep 08 07:16:35 PM JST 2014)
+#
+# Version 09.20.p007
+#
+# You can restore this configuration with:
+#
+#     irun +access+wrc factorial.sv -input wave.tcl -input /home/shaokc/Configure_files_master/IC/Digital/Verification/sv/5/restore.tcl
+#
+
+
+#
+# preferences
+#
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 4
+}
+
+#
+# Simulator
+#
+
+database require simulator -hints {
+	simulator "irun +access+wrc factorial.sv -input wave.tcl -gui -input restore.tcl"
+}
+
+#
+# cursors
+#
+set time 30ns
+if {[catch {cursor new -name  TimeA -time $time}] != ""} {
+    cursor set -using TimeA -time $time
+}
+
+#
+# mmaps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {
+{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}
+}
+mmap new -reuse -name {Example Map} -radix %x -contents {
+{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}
+}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 700x500+5+99}] != ""} {
+    window geometry "Design Browser 1" 700x500+5+99
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set \
+    -scope simulator::test
+browser yview see simulator::test
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1004+0+51}] != ""} {
+    window geometry "Waveform 1" 1920x1004+0+51
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+cursor set -using TimeA -time 30ns
+waveform baseline set -time 0
+
+set id [waveform add -signals [list simulator::test.reg_a ]]
+waveform format $id -radix %d
+
+waveform xview limits 0 40ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+844+248

@@ -1,0 +1,2 @@
+gcc -fPIC -m32 -shared -o libdpi.so \
+    factorial.c

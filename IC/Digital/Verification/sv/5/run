@@ -1,0 +1,4 @@
+#!/bin/sh
+irun +access+wrc factorial.sv -gui  #run with GUI. the dump waveform operation is finished in the test bench 
+#irun +access+wrc factorial.sv       #run without GUI. the dump waveform operation is finished in the test bench 
+#irun +access+wrc factorial.sv -input wave.tcl -gui

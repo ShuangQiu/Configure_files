@@ -1,0 +1,2 @@
+#!/bin/sh
+irun +access+wrc test.sv -input wave.tcl
