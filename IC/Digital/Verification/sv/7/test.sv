@@ -8,7 +8,7 @@ begin
 
     for (int i =1;i<=20*10^20;i++)begin
         #1
-//        $display("%t:\t%d",$time,reg_a);
+        $display("%t:\t%d\n",$time,reg_a);
         reg_a = reg_a + 1;
     end
 end
