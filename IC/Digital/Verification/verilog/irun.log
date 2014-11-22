@@ -1,0 +1,846 @@
+irun: 09.20-p007: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+TOOL:	irun	09.20-p007: Started on Nov 08, 2014 at 05:55:22 JST
+irun
+	top.v
+	clock_devider.v
+	+access+rwc
+	+tcl+top.simvision.tcl
+	-loadpli1 debpli:novas_pli_boot
+file: top.v
+	module worklib.top:v
+		errors: 0, warnings: 0
+file: clock_devider.v
+reg D_2us_clk; 
+            |
+ncvlog: *W,ILLPDX (clock_devider.v,30|12): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'D_2us_clk') [12.3.4(IEEE-2001)].
+reg D_1ms_clk;
+            |
+ncvlog: *W,ILLPDX (clock_devider.v,31|12): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'D_1ms_clk') [12.3.4(IEEE-2001)].
+reg D_1s_clk;
+           |
+ncvlog: *W,ILLPDX (clock_devider.v,32|11): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'D_1s_clk') [12.3.4(IEEE-2001)].
+reg[5:0]  clk_1s_count;
+                     |
+ncvlog: *W,ILLPDX (clock_devider.v,37|21): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'clk_1s_count') [12.3.4(IEEE-2001)].
+reg[5:0]  clk_1m_count;
+                     |
+ncvlog: *W,ILLPDX (clock_devider.v,38|21): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'clk_1m_count') [12.3.4(IEEE-2001)].
+reg[4:0]  clk_1h_count;
+                     |
+ncvlog: *W,ILLPDX (clock_devider.v,39|21): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'clk_1h_count') [12.3.4(IEEE-2001)].
+reg[9:0]  clk_1d_count;
+                     |
+ncvlog: *W,ILLPDX (clock_devider.v,40|21): Multiple declarations for a port not allowed in module with ANSI list of port declarations (port 'clk_1d_count') [12.3.4(IEEE-2001)].
+	module worklib.clock_devider:v
+		errors: 0, warnings: 7
+SYSTEM ERROR:   ACC       LOADFL
+         Failed to load dynamic library debpli
+  debpli.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS32 library.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.clock_devider:v <0x0dc2332e>
+			streams:  14, words:  6111
+		worklib.top:v <0x1ba67473>
+			streams:   5, words:  2418
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           13      13
+		Scalar wires:         8       -
+		Vectored wires:       4       -
+		Always blocks:       11      11
+		Initial blocks:       1       1
+		Pseudo assignments:   2       2
+	Writing initial simulation snapshot: worklib.top:v
+Loading snapshot worklib.top:v .................... Done
+SYSTEM ERROR:   ACC       LOADFL
+         Failed to load dynamic library debpli
+  debpli.so: cannot open shared object file: No such file or directory or file is not valid ELFCLASS32 library.
+ncsim> source /usr/cadence/IUS9.2/tools/inca/files/ncsimrc
+ncsim> ####=============================================================================
+ncsim> ####     FileName: top.simvision.tcl
+ncsim> ####      Project: clock
+ncsim> ####         Desc: 
+ncsim> ####       Author: Kechang Shao
+ncsim> ####        Email: shao.kc@gmail.com
+ncsim> ####   Department: UESTC.ME
+ncsim> ####     Homepage: 
+ncsim> ####      Version: 0.0.1
+ncsim> ####      Created: 2014-10-25 10:53:09
+ncsim> ####   LastChange: 2014-10-25 10:54:10
+ncsim> ####      History:
+ncsim> ####=============================================================================
+ncsim> 
+ncsim> # FORMAT
+ncsim> database -open -shm waves -into ./waves -default -compress
+Created default SHM database waves
+ncsim> #database -open -vcd waves -into waves/waves.vcd -event
+ncsim> 
+ncsim> # CHIPTOP
+ncsim> probe -create top -all -depth 1 -database waves
+Created probe 1
+ncsim> probe -create top.INST_clock_devider  -all -depth 1 -database waves
+Created probe 2
+ncsim> #probe -create top.test_1 -all -depth 1 -database waves
+ncsim> 
+ncsim> run
+Now is :                    0
+Now is :                  300
+Now,System time is:           499499290
+ 0: 0: 0
+Now,System time is:          1499499290
+ 0: 0: 1
+Now,System time is:          2499499290
+ 0: 0: 2
+Now,System time is:          3499499290
+ 0: 0: 3
+Now,System time is:          4499499290
+ 0: 0: 4
+Now,System time is:          5499499290
+ 0: 0: 5
+Now,System time is:          6499499290
+ 0: 0: 6
+Now,System time is:          7499499290
+ 0: 0: 7
+Now,System time is:          8499499290
+ 0: 0: 8
+Now,System time is:          9499499290
+ 0: 0: 9
+Now,System time is:         10499499290
+ 0: 0:10
+Now,System time is:         11499499290
+ 0: 0:11
+Now,System time is:         12499499290
+ 0: 0:12
+Now,System time is:         13499499290
+ 0: 0:13
+Now,System time is:         14499499290
+ 0: 0:14
+Now,System time is:         15499499290
+ 0: 0:15
+Now,System time is:         16499499290
+ 0: 0:16
+Now,System time is:         17499499290
+ 0: 0:17
+Now,System time is:         18499499290
+ 0: 0:18
+Now,System time is:         19499499290
+ 0: 0:19
+Now,System time is:         20499499290
+ 0: 0:20
+Now,System time is:         21499499290
+ 0: 0:21
+Now,System time is:         22499499290
+ 0: 0:22
+Now,System time is:         23499499290
+ 0: 0:23
+Now,System time is:         24499499290
+ 0: 0:24
+Now,System time is:         25499499290
+ 0: 0:25
+Now,System time is:         26499499290
+ 0: 0:26
+Now,System time is:         27499499290
+ 0: 0:27
+Now,System time is:         28499499290
+ 0: 0:28
+Now,System time is:         29499499290
+ 0: 0:29
+Now,System time is:         30499499290
+ 0: 0:30
+Now,System time is:         31499499290
+ 0: 0:31
+Now,System time is:         32499499290
+ 0: 0:32
+Now,System time is:         33499499290
+ 0: 0:33
+Now,System time is:         34499499290
+ 0: 0:34
+Now,System time is:         35499499290
+ 0: 0:35
+Now,System time is:         36499499290
+ 0: 0:36
+Now,System time is:         37499499290
+ 0: 0:37
+Now,System time is:         38499499290
+ 0: 0:38
+Now,System time is:         39499499290
+ 0: 0:39
+Now,System time is:         40499499290
+ 0: 0:40
+Now,System time is:         41499499290
+ 0: 0:41
+Now,System time is:         42499499290
+ 0: 0:42
+Now,System time is:         43499499290
+ 0: 0:43
+Now,System time is:         44499499290
+ 0: 0:44
+Now,System time is:         45499499290
+ 0: 0:45
+Now,System time is:         46499499290
+ 0: 0:46
+Now,System time is:         47499499290
+ 0: 0:47
+Now,System time is:         48499499290
+ 0: 0:48
+Now,System time is:         49499499290
+ 0: 0:49
+Now,System time is:         50499499290
+ 0: 0:50
+Now,System time is:         51499499290
+ 0: 0:51
+Now,System time is:         52499499290
+ 0: 0:52
+Now,System time is:         53499499290
+ 0: 0:53
+Now,System time is:         54499499290
+ 0: 0:54
+Now,System time is:         55499499290
+ 0: 0:55
+Now,System time is:         56499499290
+ 0: 0:56
+Now,System time is:         57499499290
+ 0: 0:57
+Now,System time is:         58499499290
+ 0: 0:58
+Now,System time is:         59499499290
+ 0: 0:59
+Now,System time is:         60499499290
+ 0: 1: 0
+Now,System time is:         61499499290
+ 0: 1: 1
+Now,System time is:         62499499290
+ 0: 1: 2
+Now,System time is:         63499499290
+ 0: 1: 3
+Now,System time is:         64499499290
+ 0: 1: 4
+Now,System time is:         65499499290
+ 0: 1: 5
+Now,System time is:         66499499290
+ 0: 1: 6
+Now,System time is:         67499499290
+ 0: 1: 7
+Now,System time is:         68499499290
+ 0: 1: 8
+Now,System time is:         69499499290
+ 0: 1: 9
+Now,System time is:         70499499290
+ 0: 1:10
+Now,System time is:         71499499290
+ 0: 1:11
+Now,System time is:         72499499290
+ 0: 1:12
+Now,System time is:         73499499290
+ 0: 1:13
+Now,System time is:         74499499290
+ 0: 1:14
+Now,System time is:         75499499290
+ 0: 1:15
+Now,System time is:         76499499290
+ 0: 1:16
+Now,System time is:         77499499290
+ 0: 1:17
+Now,System time is:         78499499290
+ 0: 1:18
+Now,System time is:         79499499290
+ 0: 1:19
+Now,System time is:         80499499290
+ 0: 1:20
+Now,System time is:         81499499290
+ 0: 1:21
+Now,System time is:         82499499290
+ 0: 1:22
+Now,System time is:         83499499290
+ 0: 1:23
+Now,System time is:         84499499290
+ 0: 1:24
+Now,System time is:         85499499290
+ 0: 1:25
+Now,System time is:         86499499290
+ 0: 1:26
+Now,System time is:         87499499290
+ 0: 1:27
+Now,System time is:         88499499290
+ 0: 1:28
+Now,System time is:         89499499290
+ 0: 1:29
+Now,System time is:         90499499290
+ 0: 1:30
+Now,System time is:         91499499290
+ 0: 1:31
+Now,System time is:         92499499290
+ 0: 1:32
+Now,System time is:         93499499290
+ 0: 1:33
+Now,System time is:         94499499290
+ 0: 1:34
+Now,System time is:         95499499290
+ 0: 1:35
+Now,System time is:         96499499290
+ 0: 1:36
+Now,System time is:         97499499290
+ 0: 1:37
+Now,System time is:         98499499290
+ 0: 1:38
+Now,System time is:         99499499290
+ 0: 1:39
+Now,System time is:        100499499290
+ 0: 1:40
+Now,System time is:        101499499290
+ 0: 1:41
+Now,System time is:        102499499290
+ 0: 1:42
+Now,System time is:        103499499290
+ 0: 1:43
+Now,System time is:        104499499290
+ 0: 1:44
+Now,System time is:        105499499290
+ 0: 1:45
+Now,System time is:        106499499290
+ 0: 1:46
+Now,System time is:        107499499290
+ 0: 1:47
+Now,System time is:        108499499290
+ 0: 1:48
+Now,System time is:        109499499290
+ 0: 1:49
+Now,System time is:        110499499290
+ 0: 1:50
+Now,System time is:        111499499290
+ 0: 1:51
+Now,System time is:        112499499290
+ 0: 1:52
+Now,System time is:        113499499290
+ 0: 1:53
+Now,System time is:        114499499290
+ 0: 1:54
+Now,System time is:        115499499290
+ 0: 1:55
+Now,System time is:        116499499290
+ 0: 1:56
+Now,System time is:        117499499290
+ 0: 1:57
+Now,System time is:        118499499290
+ 0: 1:58
+Now,System time is:        119499499290
+ 0: 1:59
+Now,System time is:        120499499290
+ 0: 2: 0
+Now,System time is:        121499499290
+ 0: 2: 1
+Now,System time is:        122499499290
+ 0: 2: 2
+Now,System time is:        123499499290
+ 0: 2: 3
+Now,System time is:        124499499290
+ 0: 2: 4
+Now,System time is:        125499499290
+ 0: 2: 5
+Now,System time is:        126499499290
+ 0: 2: 6
+Now,System time is:        127499499290
+ 0: 2: 7
+Now,System time is:        128499499290
+ 0: 2: 8
+Now,System time is:        129499499290
+ 0: 2: 9
+Now,System time is:        130499499290
+ 0: 2:10
+Now,System time is:        131499499290
+ 0: 2:11
+Now,System time is:        132499499290
+ 0: 2:12
+Now,System time is:        133499499290
+ 0: 2:13
+Now,System time is:        134499499290
+ 0: 2:14
+Now,System time is:        135499499290
+ 0: 2:15
+Now,System time is:        136499499290
+ 0: 2:16
+Now,System time is:        137499499290
+ 0: 2:17
+Now,System time is:        138499499290
+ 0: 2:18
+Now,System time is:        139499499290
+ 0: 2:19
+Now,System time is:        140499499290
+ 0: 2:20
+Now,System time is:        141499499290
+ 0: 2:21
+Now,System time is:        142499499290
+ 0: 2:22
+Now,System time is:        143499499290
+ 0: 2:23
+Now,System time is:        144499499290
+ 0: 2:24
+Now,System time is:        145499499290
+ 0: 2:25
+Now,System time is:        146499499290
+ 0: 2:26
+Now,System time is:        147499499290
+ 0: 2:27
+Now,System time is:        148499499290
+ 0: 2:28
+Now,System time is:        149499499290
+ 0: 2:29
+Now,System time is:        150499499290
+ 0: 2:30
+Now,System time is:        151499499290
+ 0: 2:31
+Now,System time is:        152499499290
+ 0: 2:32
+Now,System time is:        153499499290
+ 0: 2:33
+Now,System time is:        154499499290
+ 0: 2:34
+Now,System time is:        155499499290
+ 0: 2:35
+Now,System time is:        156499499290
+ 0: 2:36
+Now,System time is:        157499499290
+ 0: 2:37
+Now,System time is:        158499499290
+ 0: 2:38
+Now,System time is:        159499499290
+ 0: 2:39
+Now,System time is:        160499499290
+ 0: 2:40
+Now,System time is:        161499499290
+ 0: 2:41
+Now,System time is:        162499499290
+ 0: 2:42
+Now,System time is:        163499499290
+ 0: 2:43
+Now,System time is:        164499499290
+ 0: 2:44
+Now,System time is:        165499499290
+ 0: 2:45
+Now,System time is:        166499499290
+ 0: 2:46
+Now,System time is:        167499499290
+ 0: 2:47
+Now,System time is:        168499499290
+ 0: 2:48
+Now,System time is:        169499499290
+ 0: 2:49
+Now,System time is:        170499499290
+ 0: 2:50
+Now,System time is:        171499499290
+ 0: 2:51
+Now,System time is:        172499499290
+ 0: 2:52
+Now,System time is:        173499499290
+ 0: 2:53
+Now,System time is:        174499499290
+ 0: 2:54
+Now,System time is:        175499499290
+ 0: 2:55
+Now,System time is:        176499499290
+ 0: 2:56
+Now,System time is:        177499499290
+ 0: 2:57
+Now,System time is:        178499499290
+ 0: 2:58
+Now,System time is:        179499499290
+ 0: 2:59
+Now,System time is:        180499499290
+ 0: 3: 0
+Now,System time is:        181499499290
+ 0: 3: 1
+Now,System time is:        182499499290
+ 0: 3: 2
+Now,System time is:        183499499290
+ 0: 3: 3
+Now,System time is:        184499499290
+ 0: 3: 4
+Now,System time is:        185499499290
+ 0: 3: 5
+Now,System time is:        186499499290
+ 0: 3: 6
+Now,System time is:        187499499290
+ 0: 3: 7
+Now,System time is:        188499499290
+ 0: 3: 8
+Now,System time is:        189499499290
+ 0: 3: 9
+Now,System time is:        190499499290
+ 0: 3:10
+Now,System time is:        191499499290
+ 0: 3:11
+Now,System time is:        192499499290
+ 0: 3:12
+Now,System time is:        193499499290
+ 0: 3:13
+Now,System time is:        194499499290
+ 0: 3:14
+Now,System time is:        195499499290
+ 0: 3:15
+Now,System time is:        196499499290
+ 0: 3:16
+Now,System time is:        197499499290
+ 0: 3:17
+Now,System time is:        198499499290
+ 0: 3:18
+Now,System time is:        199499499290
+ 0: 3:19
+Now,System time is:        200499499290
+ 0: 3:20
+Now,System time is:        201499499290
+ 0: 3:21
+Now,System time is:        202499499290
+ 0: 3:22
+Now,System time is:        203499499290
+ 0: 3:23
+Now,System time is:        204499499290
+ 0: 3:24
+Now,System time is:        205499499290
+ 0: 3:25
+Now,System time is:        206499499290
+ 0: 3:26
+Now,System time is:        207499499290
+ 0: 3:27
+Now,System time is:        208499499290
+ 0: 3:28
+Now,System time is:        209499499290
+ 0: 3:29
+Now,System time is:        210499499290
+ 0: 3:30
+Now,System time is:        211499499290
+ 0: 3:31
+Now,System time is:        212499499290
+ 0: 3:32
+Now,System time is:        213499499290
+ 0: 3:33
+Now,System time is:        214499499290
+ 0: 3:34
+Now,System time is:        215499499290
+ 0: 3:35
+Now,System time is:        216499499290
+ 0: 3:36
+Now,System time is:        217499499290
+ 0: 3:37
+Now,System time is:        218499499290
+ 0: 3:38
+Now,System time is:        219499499290
+ 0: 3:39
+Now,System time is:        220499499290
+ 0: 3:40
+Now,System time is:        221499499290
+ 0: 3:41
+Now,System time is:        222499499290
+ 0: 3:42
+Now,System time is:        223499499290
+ 0: 3:43
+Now,System time is:        224499499290
+ 0: 3:44
+Now,System time is:        225499499290
+ 0: 3:45
+Now,System time is:        226499499290
+ 0: 3:46
+Now,System time is:        227499499290
+ 0: 3:47
+Now,System time is:        228499499290
+ 0: 3:48
+Now,System time is:        229499499290
+ 0: 3:49
+Now,System time is:        230499499290
+ 0: 3:50
+Now,System time is:        231499499290
+ 0: 3:51
+Now,System time is:        232499499290
+ 0: 3:52
+Now,System time is:        233499499290
+ 0: 3:53
+Now,System time is:        234499499290
+ 0: 3:54
+Now,System time is:        235499499290
+ 0: 3:55
+Now,System time is:        236499499290
+ 0: 3:56
+Now,System time is:        237499499290
+ 0: 3:57
+Now,System time is:        238499499290
+ 0: 3:58
+Now,System time is:        239499499290
+ 0: 3:59
+Now,System time is:        240499499290
+ 0: 4: 0
+Now,System time is:        241499499290
+ 0: 4: 1
+Now,System time is:        242499499290
+ 0: 4: 2
+Now,System time is:        243499499290
+ 0: 4: 3
+Now,System time is:        244499499290
+ 0: 4: 4
+Now,System time is:        245499499290
+ 0: 4: 5
+Now,System time is:        246499499290
+ 0: 4: 6
+Now,System time is:        247499499290
+ 0: 4: 7
+Now,System time is:        248499499290
+ 0: 4: 8
+Now,System time is:        249499499290
+ 0: 4: 9
+Now,System time is:        250499499290
+ 0: 4:10
+Now,System time is:        251499499290
+ 0: 4:11
+Now,System time is:        252499499290
+ 0: 4:12
+Now,System time is:        253499499290
+ 0: 4:13
+Now,System time is:        254499499290
+ 0: 4:14
+Now,System time is:        255499499290
+ 0: 4:15
+Now,System time is:        256499499290
+ 0: 4:16
+Now,System time is:        257499499290
+ 0: 4:17
+Now,System time is:        258499499290
+ 0: 4:18
+Now,System time is:        259499499290
+ 0: 4:19
+Now,System time is:        260499499290
+ 0: 4:20
+Now,System time is:        261499499290
+ 0: 4:21
+Now,System time is:        262499499290
+ 0: 4:22
+Now,System time is:        263499499290
+ 0: 4:23
+Now,System time is:        264499499290
+ 0: 4:24
+Now,System time is:        265499499290
+ 0: 4:25
+Now,System time is:        266499499290
+ 0: 4:26
+Now,System time is:        267499499290
+ 0: 4:27
+Now,System time is:        268499499290
+ 0: 4:28
+Now,System time is:        269499499290
+ 0: 4:29
+Now,System time is:        270499499290
+ 0: 4:30
+Now,System time is:        271499499290
+ 0: 4:31
+Now,System time is:        272499499290
+ 0: 4:32
+Now,System time is:        273499499290
+ 0: 4:33
+Now,System time is:        274499499290
+ 0: 4:34
+Now,System time is:        275499499290
+ 0: 4:35
+Now,System time is:        276499499290
+ 0: 4:36
+Now,System time is:        277499499290
+ 0: 4:37
+Now,System time is:        278499499290
+ 0: 4:38
+Now,System time is:        279499499290
+ 0: 4:39
+Now,System time is:        280499499290
+ 0: 4:40
+Now,System time is:        281499499290
+ 0: 4:41
+Now,System time is:        282499499290
+ 0: 4:42
+Now,System time is:        283499499290
+ 0: 4:43
+Now,System time is:        284499499290
+ 0: 4:44
+Now,System time is:        285499499290
+ 0: 4:45
+Now,System time is:        286499499290
+ 0: 4:46
+Now,System time is:        287499499290
+ 0: 4:47
+Now,System time is:        288499499290
+ 0: 4:48
+Now,System time is:        289499499290
+ 0: 4:49
+Now,System time is:        290499499290
+ 0: 4:50
+Now,System time is:        291499499290
+ 0: 4:51
+Now,System time is:        292499499290
+ 0: 4:52
+Now,System time is:        293499499290
+ 0: 4:53
+Now,System time is:        294499499290
+ 0: 4:54
+Now,System time is:        295499499290
+ 0: 4:55
+Now,System time is:        296499499290
+ 0: 4:56
+Now,System time is:        297499499290
+ 0: 4:57
+Now,System time is:        298499499290
+ 0: 4:58
+Now,System time is:        299499499290
+ 0: 4:59
+Now,System time is:        300499499290
+ 0: 5: 0
+Now,System time is:        301499499290
+ 0: 5: 1
+Now,System time is:        302499499290
+ 0: 5: 2
+Now,System time is:        303499499290
+ 0: 5: 3
+Now,System time is:        304499499290
+ 0: 5: 4
+Now,System time is:        305499499290
+ 0: 5: 5
+Now,System time is:        306499499290
+ 0: 5: 6
+Now,System time is:        307499499290
+ 0: 5: 7
+Now,System time is:        308499499290
+ 0: 5: 8
+Now,System time is:        309499499290
+ 0: 5: 9
+Now,System time is:        310499499290
+ 0: 5:10
+Now,System time is:        311499499290
+ 0: 5:11
+Now,System time is:        312499499290
+ 0: 5:12
+Now,System time is:        313499499290
+ 0: 5:13
+Now,System time is:        314499499290
+ 0: 5:14
+Now,System time is:        315499499290
+ 0: 5:15
+Now,System time is:        316499499290
+ 0: 5:16
+Now,System time is:        317499499290
+ 0: 5:17
+Now,System time is:        318499499290
+ 0: 5:18
+Now,System time is:        319499499290
+ 0: 5:19
+Now,System time is:        320499499290
+ 0: 5:20
+Now,System time is:        321499499290
+ 0: 5:21
+Now,System time is:        322499499290
+ 0: 5:22
+Now,System time is:        323499499290
+ 0: 5:23
+Now,System time is:        324499499290
+ 0: 5:24
+Now,System time is:        325499499290
+ 0: 5:25
+Now,System time is:        326499499290
+ 0: 5:26
+Now,System time is:        327499499290
+ 0: 5:27
+Now,System time is:        328499499290
+ 0: 5:28
+Now,System time is:        329499499290
+ 0: 5:29
+Now,System time is:        330499499290
+ 0: 5:30
+Now,System time is:        331499499290
+ 0: 5:31
+Now,System time is:        332499499290
+ 0: 5:32
+Now,System time is:        333499499290
+ 0: 5:33
+Now,System time is:        334499499290
+ 0: 5:34
+Now,System time is:        335499499290
+ 0: 5:35
+Now,System time is:        336499499290
+ 0: 5:36
+Now,System time is:        337499499290
+ 0: 5:37
+Now,System time is:        338499499290
+ 0: 5:38
+Now,System time is:        339499499290
+ 0: 5:39
+Now,System time is:        340499499290
+ 0: 5:40
+Now,System time is:        341499499290
+ 0: 5:41
+Now,System time is:        342499499290
+ 0: 5:42
+Now,System time is:        343499499290
+ 0: 5:43
+Now,System time is:        344499499290
+ 0: 5:44
+Now,System time is:        345499499290
+ 0: 5:45
+Now,System time is:        346499499290
+ 0: 5:46
+Now,System time is:        347499499290
+ 0: 5:47
+Now,System time is:        348499499290
+ 0: 5:48
+Now,System time is:        349499499290
+ 0: 5:49
+Now,System time is:        350499499290
+ 0: 5:50
+Now,System time is:        351499499290
+ 0: 5:51
+Now,System time is:        352499499290
+ 0: 5:52
+Now,System time is:        353499499290
+ 0: 5:53
+Now,System time is:        354499499290
+ 0: 5:54
+Now,System time is:        355499499290
+ 0: 5:55
+Now,System time is:        356499499290
+ 0: 5:56
+Now,System time is:        357499499290
+ 0: 5:57
+Now,System time is:        358499499290
+ 0: 5:58
+Now,System time is:        359499499290
+ 0: 5:59
+Now,System time is:        360499499290
+ 0: 6: 0
+Now,System time is:        361499499290
+ 0: 6: 1
+Now,System time is:        362499499290
+ 0: 6: 2
+Now,System time is:        363499499290
+ 0: 6: 3
+Now,System time is:        364499499290
+ 0: 6: 4
+Now,System time is:        365499499290
+ 0: 6: 5
+Now,System time is:        366499499290
+ 0: 6: 6
+Now,System time is:        367499499290
+ 0: 6: 7
+Now,System time is:        368499499290
+ 0: 6: 8
+Now,System time is:        369499499290
+ 0: 6: 9
+Now,System time is:        370499499290
+ 0: 6:10
+Now,System time is:        371499499290
+ 0: 6:11
+Now,System time is:        372499499290
+ 0: 6:12
+Now,System time is:        373499499290
+ 0: 6:13
+Simulation interrupted at 374030643810 NS + 0
+ncsim> ^C
+ncsim> ^C
+ncsim> 

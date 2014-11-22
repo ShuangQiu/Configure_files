@@ -1,0 +1,50 @@
+irun: 09.20-p007: (c) Copyright 1995-2009 Cadence Design Systems, Inc.
+TOOL:	irun	09.20-p007: Started on Nov 01, 2014 at 14:31:37 JST
+irun
+	+access+wrc
+	test.sv
+	-input wave.tcl
+file: test.sv
+	program worklib.test:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.test:sv <0x0c36f22d>
+			streams:   2, words:  2825
+	Building instance specific data structures.
+	Design hierarchy summary:
+		         Instances  Unique
+		Programs:        1       1
+		Registers:       1       1
+		Initial blocks:  2       2
+	Writing initial simulation snapshot: worklib.test:sv
+Loading snapshot worklib.test:sv .................... Done
+ncsim> source /usr/cadence/IUS9.2/tools/inca/files/ncsimrc
+ncsim> 
+ncsim> # NC-Sim Command File
+ncsim> # TOOL:	ncsim	09.20-p007
+ncsim> #
+ncsim> #
+ncsim> # You can restore this configuration with:
+ncsim> #
+ncsim> #     irun +access+wrc factorial.sv -input wave.tcl -input /home/shaokc/Configure_files_master/IC/Digital/Verification/sv/5/restore.tcl
+ncsim> #
+ncsim> 
+ncsim> #database -open -shm -into ./skmobile skmobile -default -event
+ncsim> #database -open -shm ./skmobile/skmobile  -incsize 1M -incfiles 4
+ncsim> database -open -shm skmobile  -incsize 100M -incfiles 400
+Created SHM database skmobile
+ncsim> probe -create -all -variables -database skmobile
+ncsim: *E,PRNONE: No new objects to probe in scope test.
+ncsim> #probe -create -database waves test.reg_a
+ncsim> 
+ncsim> run
+00000000000000000000000000000101 1 10
+Simulation complete via implicit call to $finish(1) at time 0 FS + 1
+./test.sv:15 program test;
+ncsim> exit
+TOOL:	irun	09.20-p007: Exiting on Nov 01, 2014 at 14:31:45 JST  (total: 00:00:08)
