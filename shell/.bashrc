@@ -97,10 +97,17 @@ alias rebootlinksys="curl -u 'admin:my-super-password' 'http://192.168.1.2/setup
 alias reboottomato="ssh admin@192.168.1.1 /sbin/reboot"
 
 
-########
-##Opencv Lib Config
-export LD_LIBRARY_PATH=/usr/lib64
-alias gcv="g++ -Wall `pkg-config opencv --libs --cflags opencv`"
+#shaokc 20141206## ########
+#shaokc 20141206## ##Opencv Lib Config
+#shaokc 20141206## export LD_LIBRARY_PATH=/usr/lib64
+#shaokc 20141206## alias gcv="g++ -Wall `pkg-config opencv --libs --cflags opencv`"
+
+# User specific aliases and functions
+# shaokc personal PC.
+# For some IC tools.
+export CDS_HOME=/tooltop/cadence
+export LM_LICENSE_FILE=$CDS_HOME/License/cadence_license.dat
+export PATH=$CDS_HOME/INCISIV_13.20.002/tools.lnx86/bin:$PATH
 
 #######
 reverse-i-search
